@@ -32,7 +32,7 @@ async function loadPokemon(id) {
     if (currentPokemonId === id) {
       displayPokemonDetails(pokemon);
 
-      const [leftArrow, rightArrow] = ["#leftArrow", "#rightArrow"].map((sel) =>
+      const [leftArrow, rightArrow] = ["#left-arrow", "#right-arrow"].map((sel) =>
         document.querySelector(sel)
       );
       leftArrow.removeEventListener("click", navigatePokemon);

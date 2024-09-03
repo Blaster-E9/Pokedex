@@ -3,7 +3,7 @@ const listWrapper = document.querySelector(".list-wrapper");
 const searchInput = document.querySelector("#search-input");
 const numberFilter = document.querySelector("#number");
 const nameFilter = document.querySelector("#name");
-const notFoundMessage = document.querySelector("not-found-message");
+const notFoundMessage = document.querySelector("#not-found-message");
 
 let allPokemons = [];
 
@@ -67,21 +67,21 @@ function displayPokemons(pokemon) {
 searchInput.addEventListener("keyup", handleSearch);
 
 function handleSearch() {
-    const searchTerm = searchInput.value.toLowerCase();
-    let filteredPokemons;
-  
-    if (numberFilter.checked) {
-      filteredPokemons = allPokemons.filter((pokemon) => {
-        const pokemonID = pokemon.url.split("/")[6];
-        return pokemonID.startsWith(searchTerm);
-      });
-    } else if (nameFilter.checked) {
-      filteredPokemons = allPokemons.filter((pokemon) =>
-        pokemon.name.toLowerCase().startsWith(searchTerm)
-      );
-    } else {
-      filteredPokemons = allPokemons;
-    }
+  const searchTerm = searchInput.value.toLowerCase();
+  let filteredPokemons;
+
+  if (numberFilter.checked) {
+    filteredPokemons = allPokemons.filter((pokemon) => {
+      const pokemonID = pokemon.url.split("/")[6];
+      return pokemonID.startsWith(searchTerm);
+    });
+  } else if (nameFilter.checked) {
+    filteredPokemons = allPokemons.filter((pokemon) =>
+      pokemon.name.toLowerCase().startsWith(searchTerm)
+    );
+  } else {
+    filteredPokemons = allPokemons;
+  }
   
     displayPokemons(filteredPokemons);
   
@@ -100,6 +100,3 @@ function handleSearch() {
     displayPokemons(allPokemons);
     notFoundMessage.style.display = "none";
   }
-
-
-

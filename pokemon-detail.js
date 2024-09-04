@@ -1,7 +1,7 @@
 let currentPokemonId = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const maxPokemons = 151;
+  const maxPokemons = 150;
   const pokemonID = new URLSearchParams(window.location.search).get("id");
   const id = parseInt(pokemonID, 10);
 
@@ -83,6 +83,7 @@ const typeColors = {
   dark: "#705848",
   steel: "#B8B8D0",
   dark: "#EE99AC",
+  fairy: "#D7849A"
 };
 
 function setElementStyles(elements, cssProperty, value) {
